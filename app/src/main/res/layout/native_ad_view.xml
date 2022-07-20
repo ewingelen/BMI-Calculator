@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.gms.ads.nativead.NativeAdView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nativeAdView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:visibility="invisible"
+    tools:visibility="visible">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:paddingBottom="@dimen/padding_8"
+        android:background="@drawable/rounded_stroke_purple_background">
+
+        <ImageView
+            android:id="@+id/adIcon"
+            android:layout_width="@dimen/size_60"
+            android:layout_height="@dimen/size_60"
+            android:layout_marginStart="@dimen/margin_8"
+            android:layout_marginBottom="@dimen/margin_8"
+            android:contentDescription="@string/description_icon"
+            app:layout_constraintBottom_toTopOf="@+id/btnAction"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:src="@color/gray" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/adHeadline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_8"
+            android:textAppearance="@style/AdButtonText"
+            app:layout_constraintBottom_toTopOf="@+id/adBody"
+            app:layout_constraintStart_toEndOf="@+id/adIcon"
+            app:layout_constraintTop_toTopOf="@id/adIcon"
+            tools:text="@string/label_website_name" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/adBody"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_8"
+            android:textAppearance="@style/AddBody"
+            app:layout_constraintBottom_toBottomOf="@+id/adIcon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/adIcon"
+            app:layout_constraintTop_toBottomOf="@id/adHeadline"
+            tools:text="@string/label_website_description" />
+
+        <ImageView
+            android:id="@+id/adStore"
+            android:layout_width="@dimen/size_24"
+            android:layout_height="0dp"
+            android:layout_marginEnd="@dimen/margin_2"
+            android:contentDescription="@string/description_store"
+            android:src="@drawable/ic_google_play"
+            app:layout_constraintBottom_toBottomOf="@id/adAdvertiser"
+            app:layout_constraintEnd_toStartOf="@+id/adAdvertiser"
+            app:layout_constraintTop_toTopOf="@id/adAdvertiser" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/adAdvertiser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_4"
+            android:layout_marginEnd="@dimen/margin_4"
+            android:background="@color/yellow"
+            android:paddingHorizontal="@dimen/padding_4"
+            android:text="@string/label_ad"
+            android:textAppearance="@style/AdButtonText"
+            app:layout_constraintBottom_toTopOf="@+id/adHeadline"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnAction"
+            style="@style/AdButton"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/size_36"
+            android:layout_marginHorizontal="@dimen/margin_8"
+            android:text="@string/install"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.gms.ads.nativead.NativeAdView>

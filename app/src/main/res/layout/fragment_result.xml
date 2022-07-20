@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragmentResult"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".result.presentation.ResultFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:id="@+id/llResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_42"
+            android:layout_marginTop="@dimen/margin_42"
+            android:layout_marginBottom="@dimen/margin_24"
+            android:background="@drawable/square_vertical_gradient_background"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/padding_36"
+            android:paddingBottom="@dimen/padding_24">
+
+            <com.google.android.material.divider.MaterialDivider
+                style="@style/Divider2"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_3" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingVertical="@dimen/padding_4"
+                android:text="@string/body_mass_index"
+                android:textAppearance="@style/Subtitle2" />
+
+            <com.google.android.material.divider.MaterialDivider
+                style="@style/Divider2"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_3" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvBmi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_42"
+                android:textAppearance="@style/Hero"
+                tools:text="18.61" />
+
+            <com.google.android.material.divider.MaterialDivider
+                style="@style/Divider3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_64" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvResult"
+                style="@style/Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_8"
+                android:layout_marginTop="@dimen/margin_42"
+                android:text="@string/label_hello"
+                android:textAlignment="center" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvBmiResult"
+                style="@style/Body3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_normal_bmi" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvPonderalIndexResult"
+                style="@style/Body3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_ponderal_index" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_24"
+                android:layout_marginTop="@dimen/margin_42">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnShare"
+                    style="@style/ButtonSmall"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="@string/button_share"
+                    app:icon="@drawable/ic_share" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnRate"
+                    style="@style/ButtonSmall"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_24"
+                    android:layout_weight="0.5"
+                    android:text="@string/rate"
+                    app:icon="@drawable/ic_star" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <include
+        android:id="@+id/nativeAdView"
+        layout="@layout/native_ad_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margin_8"
+        android:layout_marginBottom="@dimen/margin_8" />
+</LinearLayout>

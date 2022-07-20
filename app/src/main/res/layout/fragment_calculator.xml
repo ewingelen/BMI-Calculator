@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".calculator.presentation.CalculatorFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvEnterDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_42"
+            android:text="@string/label_enter_personal_detail"
+            android:textAppearance="@style/H1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etName"
+            style="@style/EditText"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_48"
+            android:layout_marginHorizontal="@dimen/margin_24"
+            android:layout_marginTop="@dimen/margin_24"
+            android:hint="@string/hint_name"
+            android:paddingHorizontal="@dimen/padding_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvEnterDetail"
+            tools:ignore="TextContrastCheck" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvCalculateBmi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_42"
+            android:text="@string/label_calculate_bmi"
+            android:textAppearance="@style/Subtitle1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etName"
+            tools:ignore="TextContrastCheck" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvWeight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_weight"
+            android:textAppearance="@style/Body1"
+            app:layout_constraintEnd_toStartOf="@+id/tvHeight"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvHeight" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvHeight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_24"
+            android:text="@string/label_height"
+            android:textAppearance="@style/Body1"
+            app:layout_constraintEnd_toStartOf="@id/tvGender"
+            app:layout_constraintStart_toEndOf="@id/tvWeight"
+            app:layout_constraintTop_toBottomOf="@id/tvCalculateBmi" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvGender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_gender"
+            android:textAppearance="@style/Body1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvHeight"
+            app:layout_constraintTop_toTopOf="@id/tvHeight" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cvDetails"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_120"
+            android:layout_marginHorizontal="@dimen/margin_24"
+            android:layout_marginTop="@dimen/margin_16"
+            android:translationZ="-10dp"
+            app:cardElevation="@dimen/elevation_8"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvHeight" />
+
+        <NumberPicker
+            android:id="@+id/npWeight"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:theme="@style/NumberPicker"
+            android:translationZ="@dimen/translation_z_10"
+            app:layout_constraintBottom_toBottomOf="@id/cvDetails"
+            app:layout_constraintEnd_toEndOf="@id/tvWeight"
+            app:layout_constraintStart_toStartOf="@id/tvWeight"
+            app:layout_constraintTop_toTopOf="@id/cvDetails" />
+
+        <NumberPicker
+            android:id="@+id/npHeight"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:theme="@style/NumberPicker"
+            android:translationZ="@dimen/translation_z_10"
+            app:layout_constraintBottom_toBottomOf="@id/cvDetails"
+            app:layout_constraintEnd_toEndOf="@id/tvHeight"
+            app:layout_constraintStart_toStartOf="@id/tvHeight"
+            app:layout_constraintTop_toTopOf="@id/cvDetails" />
+
+        <NumberPicker
+            android:id="@+id/npGender"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:theme="@style/NumberPicker"
+            android:translationZ="@dimen/translation_z_10"
+            app:layout_constraintBottom_toBottomOf="@id/cvDetails"
+            app:layout_constraintEnd_toEndOf="@id/tvGender"
+            app:layout_constraintStart_toStartOf="@id/tvGender"
+            app:layout_constraintTop_toTopOf="@id/cvDetails" />
+
+        <com.google.android.material.divider.MaterialDivider
+            style="@style/Divider1"
+            android:layout_width="@dimen/size_48"
+            android:layout_height="@dimen/size_3"
+            android:layout_marginBottom="@dimen/margin_42"
+            android:translationZ="@dimen/translation_z_10"
+            app:layout_constraintBottom_toBottomOf="@id/cvDetails"
+            app:layout_constraintEnd_toEndOf="@id/npWeight"
+            app:layout_constraintStart_toStartOf="@id/npWeight" />
+
+        <com.google.android.material.divider.MaterialDivider
+            style="@style/Divider1"
+            android:layout_width="@dimen/size_48"
+            android:layout_height="@dimen/size_3"
+            android:layout_marginBottom="@dimen/margin_42"
+            android:translationZ="@dimen/translation_z_10"
+            app:layout_constraintBottom_toBottomOf="@id/cvDetails"
+            app:layout_constraintEnd_toEndOf="@id/npHeight"
+            app:layout_constraintStart_toStartOf="@id/npHeight" />
+
+        <com.google.android.material.divider.MaterialDivider
+            style="@style/Divider1"
+            android:layout_width="@dimen/size_48"
+            android:layout_height="@dimen/size_3"
+            android:layout_marginBottom="@dimen/margin_42"
+            android:translationZ="@dimen/translation_z_10"
+            app:layout_constraintBottom_toBottomOf="@id/cvDetails"
+            app:layout_constraintEnd_toEndOf="@id/npGender"
+            app:layout_constraintStart_toStartOf="@id/npGender" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnCalculate"
+            style="@style/ButtonBig"
+            android:layout_width="@dimen/size_0"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_42"
+            android:layout_marginVertical="@dimen/margin_16"
+            android:text="@string/button_calculate"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cvDetails" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
